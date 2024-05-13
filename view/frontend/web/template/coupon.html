@@ -1,0 +1,51 @@
+<!--
+* Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_SplitCart
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+-->
+<div class="block discount active">
+    <div class="fieldset coupon">
+        <form id="coupon-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+            <fieldset class="fieldset">
+                <legend data-bind="i18n: 'Apply Discount Code'"></legend>
+            </fieldset>
+            <div class="field">
+                <div class="control">
+                    <input class="input-text"
+                           type="text"
+                           name="coupon"
+                           placeholder="Enter discount code"
+                           data-validate="{required:true}"
+                           data-bind='attr: { disabled: hasCouponCode }, value: couponCode'
+                           id="coupon" />
+                </div>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary" data-bind="visible: !hasCouponCode()">
+                    <button id="applyBtn" type="button" data-bind="click: applyCouponCode" class="action apply primary">
+                        <span data-bind="i18n: 'Apply Discount'"></span>
+                    </button>
+                </div>
+                <div class="primary" data-bind="visible: !!hasCouponCode()">
+                    <button id="cancelBtn" type="button" data-bind="click: cancelCouponCode"
+                            class="action cancel primary">
+                        <span data-bind="i18n: 'Cancel Coupon'"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

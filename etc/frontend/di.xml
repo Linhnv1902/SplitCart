@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_SplitCart
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Controller\Cart\CouponPost">
+        <plugin name="mp_coupon_post"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Controller\Cart\CouponPost" />
+    </type>
+
+    <type name="Magento\Framework\View\Element\Template">
+        <plugin name="mp_custom_template"
+                type="Mageplaza\SplitCart\Plugin\Magento\Framework\View\Element\Template" />
+    </type>
+
+    <type name="Magento\Checkout\Block\Cart\Grid">
+        <plugin name="mp_gird_checkout_cart"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Block\Cart\Grid" />
+    </type>
+
+    <type name="Magento\Checkout\Block\Cart\Coupon">
+        <plugin name="mp_checkout_coupon_split_cart"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Block\Cart\Coupon" />
+    </type>
+
+    <type name="Magento\Checkout\Model\DefaultConfigProvider">
+        <plugin name="mp_default_config_split_cart"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Model\DefaultConfigProvider" />
+    </type>
+
+    <type name="Magento\Checkout\Model\Session">
+        <plugin name="model_checkout_session_split_cart"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Model\Session" />
+    </type>
+
+    <type name="Magento\Checkout\Model\Session">
+        <plugin name="checkout_session_split_cart"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\Model\Session" />
+    </type>
+
+    <type name="Magento\Checkout\Controller\Cart\Add">
+        <plugin name="mp_custom_buy_now"
+                type="Mageplaza\SplitCart\Plugin\Magento\Checkout\CustomBuyNow" />
+    </type>
+</config>

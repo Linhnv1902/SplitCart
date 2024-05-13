@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    //<![CDATA[
+    require(
+        [
+            'jquery',
+        ], function ($) {
+            "use strict";
+            var htmlToAppend = `<button title="<?= /* @escapeNotVerified */  __('Buy Now') ?>" id="buy-now" class="action
+        primary tocart buynow">
+        <span><?= /* @escapeNotVerified */ __('Buy Now') ?></span></button>`;
+            $("#product-addtocart-button").after(htmlToAppend);
+            $(function () {
+                $('#buy-now').on('click', function () {
+                    var form = $('#product_addtocart_form');
+                    var baseUrl = form.attr('action'),
+                        buyNowUrl = baseUrl.replace('checkout/cart/add', 'checkout/cart/add/action/buynow');
+                    form.attr('action', buyNowUrl);
+                })
+
+            });
+        });
+    //]]>
+</script>
